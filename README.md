@@ -21,6 +21,7 @@ Sistem ini memungkinkan admin membuat dan mengelola acara, serta peserta untuk m
 
 ## 🧩 Struktur Proyek
 
+```markdown
 interoperability-final-komang-emo/
 ├─ Backend/
 │ ├─ init.py
@@ -31,6 +32,7 @@ interoperability-final-komang-emo/
 │ └─ create_db.sql
 └─ frontend/
 └─ index.html
+```
 
 ---
 
