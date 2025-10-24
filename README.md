@@ -168,6 +168,16 @@ File frontend sederhana (frontend/index.html) dapat digunakan untuk:
 Screenshot Swagger UI (/docs)
 ![Swagger UI](<Media/swagger(ui).png>)
 Screenshot Postman pengujian API
-![Swagger UI](<Media/swagger(ui).png>)
+![Swagger UI](<Media/postman(post1).png>)
+![Swagger UI](<Media/postman(get1).png>)
+![Swagger UI](<Media/postman(post2).png>)
+![Swagger UI](<Media/postman(get2).png>)
+![Swagger UI](<Media/postman(delete).png>)
+![Swagger UI](<Media/postman(get3).png>)
 Screenshot tampilan frontend (opsional)
-![Swagger UI](<Media/swagger(ui).png>)
+![Swagger UI](<Media/frontend(ui).png>)
+
+### 🏁 Lisensi
+
+Proyek ini dibuat untuk keperluan akademik (UTS Interoperabilitas).
+Bebas digunakan sebagai referensi pembelajaran FastAPI & konsep interoperabilitas.
