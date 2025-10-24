@@ -166,7 +166,8 @@ File frontend sederhana (frontend/index.html) dapat digunakan untuk:
 ### 📸 Dokumentasi Tambahan
 
 Screenshot Swagger UI (/docs)
-/Media/swagger(ui).png
+![Swagger UI](<Media/swagger(ui).png>)
 Screenshot Postman pengujian API
-
+![Swagger UI](<Media/swagger(ui).png>)
 Screenshot tampilan frontend (opsional)
+![Swagger UI](<Media/swagger(ui).png>)
