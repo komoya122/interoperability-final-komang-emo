@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Campus Events</title>
+</head>
+<body>
+  <h1>Campus Events</h1>
+  <div id="events"></div>
+
+  <h2>Register</h2>
+  <form id="regForm">
+    <input name="name" placeholder="Nama" required />
+    <input name="email" placeholder="Email" type="email" required />
+    <select name="event_id" id="eventSelect" required></select>
+    <button type="submit">Daftar</button>
+  </form>
+
+  <div id="msg"></div>
+
+  <script>
+    const API = "http://127.0.0.1:8000";
+
+    async function loadEvents() {
+      const res = await fetch(API + "/events");
+      const events = await res.json();
+      const container = document.getElementById("events");
+      const select = document.getElementById("eventSelect");
+      container.innerHTML = "";
+      select.innerHTML = "";
+      events.forEach(ev => {
+        const el = document.createElement("div");
+        el.innerText = `${ev.id} - ${ev.title} | ${ev.date} | ${ev.location} | Quota: ${ev.quota}`;
+        container.appendChild(el);
+
+        const opt = document.createElement("option");
+        opt.value = ev.id;
+        opt.innerText = `${ev.title} (${ev.date})`;
+        select.appendChild(opt);
+      });
+    }
+
+    document.getElementById("regForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const body = {
+        name: form.name.value,
+        email: form.email.value,
+        event_id: Number(form.event_id.value)
+      };
+      const res = await fetch(API + "/register", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(body)
+      });
+      const msg = document.getElementById("msg");
+      if (res.ok) {
+        const data = await res.json();
+        msg.innerText = "Pendaftaran sukses! ID peserta: " + data.id;
+      } else {
+        const err = await res.json();
+        msg.innerText = "Error: " + (err.detail || JSON.stringify(err));
+      }
+    });
+
+    loadEvents();
+  </script>
+</body>
+</html>
